@@ -1,0 +1,313 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+
+    font-family: Arial, sans-serif;
+
+    background:
+        radial-gradient(circle at top, #35145f, #12051f 55%, #05010a);
+
+    color: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    perspective: 1000px;
+}
+
+/* Background particles */
+
+#particles {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+}
+
+.particle {
+    position: absolute;
+
+    animation:
+        floatUp linear infinite,
+        rotate 4s linear infinite;
+
+    opacity: 0.8;
+}
+
+@keyframes floatUp {
+
+    0% {
+        transform: translateY(110vh);
+    }
+
+    100% {
+        transform: translateY(-120px);
+    }
+}
+
+@keyframes rotate {
+
+    0% {
+        rotate: 0deg;
+    }
+
+    100% {
+        rotate: 360deg;
+    }
+}
+
+/* Logo */
+
+.logo {
+
+    position: fixed;
+
+    top: 25px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    text-align: center;
+
+    font-size: 45px;
+
+    animation: logoFloat 3s ease-in-out infinite;
+
+    z-index: 10;
+}
+
+.logo span {
+
+    display: block;
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    letter-spacing: 5px;
+
+    text-transform: uppercase;
+
+    text-shadow:
+        0 0 10px #ff5ca8,
+        0 0 30px #ff5ca8;
+}
+
+@keyframes logoFloat {
+
+    0%,100% {
+        transform: translateX(-50%) translateY(0) rotateY(0);
+    }
+
+    50% {
+        transform: translateX(-50%) translateY(-12px) rotateY(15deg);
+    }
+}
+
+/* Main Card */
+
+.card {
+
+    width: 90%;
+    max-width: 500px;
+
+    padding: 45px 30px;
+
+    text-align: center;
+
+    border-radius: 30px;
+
+    background: rgba(255,255,255,0.08);
+
+    border: 1px solid rgba(255,255,255,0.2);
+
+    backdrop-filter: blur(15px);
+
+    box-shadow:
+        0 30px 80px rgba(0,0,0,0.5),
+        inset 0 0 30px rgba(255,255,255,0.05);
+
+    transform-style: preserve-3d;
+
+    animation: cardFloat 4s ease-in-out infinite;
+
+    z-index: 5;
+}
+
+@keyframes cardFloat {
+
+    0%,100% {
+        transform: translateY(0) rotateX(0deg);
+    }
+
+    50% {
+        transform: translateY(-15px) rotateX(3deg);
+    }
+}
+
+.cake {
+
+    font-size: 90px;
+
+    animation:
+        cakeFloat 2s ease-in-out infinite,
+        cakeRotate 5s linear infinite;
+
+    text-shadow:
+        0 0 20px #ff69b4,
+        0 0 50px #ff1493;
+}
+
+@keyframes cakeFloat {
+
+    0%,100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+@keyframes cakeRotate {
+
+    0% {
+        rotate: -3deg;
+    }
+
+    50% {
+        rotate: 3deg;
+    }
+
+    100% {
+        rotate: -3deg;
+    }
+}
+
+h1 {
+
+    font-size: 40px;
+
+    margin: 15px 0;
+
+    background:
+        linear-gradient(90deg,#ff9acb,#ffffff,#ffd166);
+
+    -webkit-background-clip: text;
+    color: transparent;
+
+    text-shadow:
+        0 0 20px rgba(255,100,180,0.4);
+}
+
+.subtitle {
+
+    font-size: 18px;
+
+    margin-bottom: 25px;
+
+    opacity: 0.9;
+}
+
+/* Input */
+
+input {
+
+    width: 100%;
+
+    padding: 16px;
+
+    border-radius: 30px;
+
+    border: 2px solid rgba(255,255,255,0.3);
+
+    outline: none;
+
+    background: rgba(0,0,0,0.25);
+
+    color: white;
+
+    text-align: center;
+
+    font-size: 17px;
+
+    margin-bottom: 18px;
+}
+
+input::placeholder {
+
+    color: rgba(255,255,255,0.7);
+}
+
+/* Button */
+
+button {
+
+    width: 100%;
+
+    padding: 17px;
+
+    border: none;
+
+    border-radius: 30px;
+
+    cursor: pointer;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    color: #6b1647;
+
+    background:
+        linear-gradient(90deg,#ffd1e8,#ffffff,#ffe7a3);
+
+    box-shadow:
+        0 10px 30px rgba(255,100,180,0.4);
+
+    transition: 0.3s;
+}
+
+button:hover {
+
+    transform:
+        scale(1.05)
+        translateY(-3px);
+
+    box-shadow:
+        0 15px 40px rgba(255,100,180,0.7);
+}
+
+/* Birthday Content */
+
+#birthdayContent {
+
+    display: none;
+
+    position: fixed;
+
+    inset: 0;
+
+    overflow-y: auto;
+
+    padding: 100px 20px 40px;
+
+    text-align: center;
+
+    background:
+        radial-gradient(circle at center,#42146d,#09020f);
+
+    z-index: 20;
+}
+
+#birthdayTitle {
+
+    font-size: clamp(35px,7vw,70px);
+
+    ma

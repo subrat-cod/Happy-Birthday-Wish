@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Birthday Surprise 🎂</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Background particles -->
+    <div id="particles"></div>
+
+    <!-- 3D Birthday Logo -->
+    <div class="logo">
+        🎂
+        <span>Birthday</span>
+        <span>Surprise</span>
+    </div>
+
+    <!-- Main Card -->
+    <div class="card" id="card">
+
+        <div class="cake">🎂</div>
+
+        <h1>Happy Birthday</h1>
+
+        <p class="subtitle">
+            💖 A Special Surprise For You 💖
+        </p>
+
+        <input
+            type="text"
+            id="name"
+            placeholder="✨ Enter Your Name ✨"
+        >
+
+        <button onclick="startBirthday()">
+            🎵 TAP TO PLAY MUSIC 🎵
+        </button>
+
+    </div>
+
+    <!-- Birthday Content -->
+    <div id="birthdayContent">
+
+        <h2 id="birthdayTitle"></h2>
+
+        <div id="wishBox"></div>
+
+    </div>
+
+    <!-- Music -->
+    <audio id="music" src="song.mp3"></audio>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
